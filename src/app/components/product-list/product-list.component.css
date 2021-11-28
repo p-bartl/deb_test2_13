@@ -2,9 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 200px;
-    margin-bottom: 64px;
-    border-style: ridge;
+    max-width: 125px;
+    margin-bottom: 45px;
+    border-style: outset;
   }
   
   .product-container {

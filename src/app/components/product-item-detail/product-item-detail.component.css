@@ -1,25 +1,25 @@
 img {
-  border-radius: 10px;
-  width: 320px;
+  border-radius: 5px;
+  width: 200px;
 }
 
 .select-input {
-  width: 108px; 
-  margin-bottom: 8px;
+  width: 75px; 
+  margin-bottom: 5px;
 }
 
 .detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 64px;
+  margin-top: 45px;
 }
 
 .detail-item {
-  margin-left: 128px;
-  margin-right: 128px;
+  margin-left: 75px;
+  margin-right: 75px;
 }
 
 .back-link {
-  margin-top: 8px;
+  margin-top: 5px;
 }

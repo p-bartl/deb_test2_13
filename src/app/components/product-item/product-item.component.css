@@ -1,9 +1,9 @@
 .product-image {      
   list-style-type: none;
-  width: 290px;
-  padding: 20px;
+  width: 175px;
+  padding: 10px;
   margin: 6px 6px;        
-  border: 1px solid #33B5E5;
+  border: 1px outset #154c79;
 } 
 
 .product-container {
@@ -16,15 +16,15 @@
 }
 
 .select-input {
-  width: 108px; 
-  margin-bottom: 8px;
+  width: 75px; 
+  margin-bottom: 5px;
 }
 
 .product-item{
 margin: 2rem;
-margin-left: 200px;
+margin-left: 125px;
 }
 
 .product-info{
-margin-bottom:10px;
+margin-bottom:5px;
 }
