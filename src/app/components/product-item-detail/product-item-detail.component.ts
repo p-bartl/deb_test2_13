@@ -12,7 +12,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   product:product = {id:0,name:'',price:0,url:'0',description:''}
   quantityList = [1,2,3,4,5,6,7,8,9,10]
-  selectedQuantity=1
+  amount_input_frontend=1
   constructor(private productItemServe:ProductItemService,private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class ProductItemDetailComponent implements OnInit {
   }
 
   addToCart(product:product):void{
-    this.cartService.addCart(product.id,product,this.selectedQuantity)
+    this.cartService.addCart(product.id,product,this.amount_input_frontend)
     alert("Added to cart")
   }
 

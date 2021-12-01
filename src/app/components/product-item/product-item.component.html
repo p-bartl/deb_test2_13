@@ -10,7 +10,7 @@
             ${{product.price}}
         </div>
         <form (ngSubmit)="addToCart(product)">
-            <select class="select-input" name="selectedQuantity" [(ngModel)]="selectedQuantity">
+            <select class="select-input" name="selectedQuantity" [(ngModel)]="amount_input_frontend">
                 <option *ngFor="let quantity of quantityList" [ngValue]="quantity">{{quantity}}</option>
             </select>
             <br>
