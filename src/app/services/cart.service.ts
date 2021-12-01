@@ -5,19 +5,20 @@ import { product } from '../models/model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CartService {
 
-  private cart:{[productId:number]:{productInfo:product,amount:number}} = {}
+  private cart:{[productId:number]:{productInfo:product,amount_stored:number}} = {}
   private purchaseInfo:{fullname:string, address:string,total:number} = {fullname:'',address:'',total:0}
 
   constructor() { }
 
-  addCart(productId:number,product:product,quantity:number){
+  addCart(productId:number,product:product,amount_input:number){
     if(productId in this.cart){
-      this.cart[productId].amount +=quantity
+      this.cart[productId].amount_stored +=amount_input
     }
     else{
-      this.cart[productId] = {productInfo:product, amount:quantity}
+      this.cart[productId] = {productInfo:product, amount_stored:amount_input}
     }
   }
 

@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
+
 export class CartComponent implements OnInit {
-  cartList: {[productId: number]: {productInfo: product, amount: number}} = {};
+  cartList: {[productId: number]: {productInfo: product, amount_stored: number}} = {};
   totalPrice = 0;
   fullName = '';
   address = '';
@@ -25,7 +26,7 @@ export class CartComponent implements OnInit {
   getTotal(){
     this.totalPrice = 0;
     for(let productId in this.cartList){
-      this.totalPrice += this.cartList[productId].amount * this.cartList[productId].productInfo.price;
+      this.totalPrice += this.cartList[productId].amount_stored * this.cartList[productId].productInfo.price;
     }
 
     this.totalPrice = parseFloat(this.totalPrice.toFixed(2));

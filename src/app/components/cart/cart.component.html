@@ -8,7 +8,7 @@
             ${{cart.value.productInfo.price}}
         </div>
         <form class="cart-item">
-            Amount: <input class="number-input" min="0" name="amount" type="number" value="{{cart.value.amount}}" [(ngModel)]="cart.value.amount" (ngModelChange)="getTotal()">
+            Amount: <input class="number-input" min="0" name="amount_stored" type="number" value="{{cart.value.amount_stored}}" [(ngModel)]="cart.value.amount_stored" (ngModelChange)="getTotal()">
         </form>
         <button class="btn btn-primary" (click)="removeItem(cart.value.productInfo.id)">
             Remove

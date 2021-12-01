@@ -19,7 +19,7 @@ selectedQuantity = 1;
   }
 
   addToCart(product:product):void{
-    this.addedProduct.emit({product:product,amount:this.selectedQuantity})
+    this.addedProduct.emit({product:product,amount_input:this.selectedQuantity})
   }
 
   setSelectedItem(product:product){
