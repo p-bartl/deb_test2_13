@@ -1,15 +1,15 @@
 <div class="product-item">
     <div class="product-container">
-        <a [routerLink]="['productDetail',product_parent.name]" (click)="setSelectedItem(product_parent)">
-            <img class="product-image" src={{product_parent.url}}>
+        <a [routerLink]="['productDetail',product_child.name]" (click)="setSelectedItem(product_child)">
+            <img class="product-image" src={{product_child.url}}>
         </a>
         <div class="product-info">
-            {{product_parent.name}}
+            {{product_child.name}}
         </div>
         <div class="product-info">
-            ${{product_parent.price}}
+            ${{product_child.price}}
         </div>
-        <form (ngSubmit)="addToCart(product_parent)">
+        <form (ngSubmit)="addToCart(product_child)">
             <select class="select-input" name="selectedQuantity" [(ngModel)]="amount_input_frontend">
                 <option *ngFor="let quantity of quantityList" [ngValue]="quantity">{{quantity}}</option>
             </select>

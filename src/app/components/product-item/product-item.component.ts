@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input() product_parent = {id:0,name:'',price:0,url:'',description:''}
+  @Input() product_child = {id:0,name:'',price:0,url:'',description:''}
   @Output() addedProduct = new EventEmitter()
 
   quantityList = [1,2,3,4,5,6,7,8,9,10]
@@ -24,7 +24,7 @@ export class ProductItemComponent implements OnInit {
     this.addedProduct.emit({product:product,amount_input:this.amount_input_frontend})
   }
 
-  setSelectedItem(product_parent:productArray){
-    this.productItemService.setSelectedProduct(product_parent)
+  setSelectedItem(product_child:productArray){
+    this.productItemService.setSelectedProduct(product_child)
   }
 }
