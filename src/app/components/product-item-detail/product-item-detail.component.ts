@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductItemService } from 'src/app/services/product-item.service';
-import { product } from 'src/app/models/model';
+import { productArray } from 'src/app/models/model';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemDetailComponent implements OnInit {
 
-  product:product = {id:0,name:'',price:0,url:'0',description:''}
+  product:productArray = {id:0,name:'',price:0,url:'0',description:''}
   quantityList = [1,2,3,4,5,6,7,8,9,10]
   amount_input_frontend=1
   constructor(private productItemServe:ProductItemService,private cartService:CartService) { }
@@ -19,7 +19,7 @@ export class ProductItemDetailComponent implements OnInit {
     this.product = this.productItemServe.getSelectedProduct();
   }
 
-  addToCart(product:product):void{
+  addToCart(product:productArray):void{
     this.cartService.addCart(product.id,product,this.amount_input_frontend)
     alert("Added to cart")
   }

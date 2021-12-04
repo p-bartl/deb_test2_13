@@ -1,16 +1,16 @@
 <div class="cart-container">
     <div class="cart-item-details" *ngFor="let cart of cartList | keyvalue">
-        <img class="img" src={{cart.value.productInfo.url}}>
+        <img class="img" src={{cart.value.productInCartArray.url}}>
         <div class="cart-item">
-            <strong>{{cart.value.productInfo.name}}</strong>
+            <strong>{{cart.value.productInCartArray.name}}</strong>
         </div>
         <div class="cart-item">
-            ${{cart.value.productInfo.price}}
+            ${{cart.value.productInCartArray.price}}
         </div>
         <form class="cart-item">
             Amount: <input class="number-input" min="0" name="amount_stored" type="number" value="{{cart.value.amount_stored}}" [(ngModel)]="cart.value.amount_stored" (ngModelChange)="getTotal()">
         </form>
-        <button class="btn btn-primary" (click)="removeItem(cart.value.productInfo.id)">
+        <button class="btn btn-primary" (click)="removeItem(cart.value.productInCartArray.id)">
             Remove
         </button>
     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { product } from 'src/app/models/model';
+import { productArray } from 'src/app/models/model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class CartComponent implements OnInit {
-  cartList: {[productId: number]: {productInfo: product, amount_stored: number}} = {};
+  cartList: {[productId: number]: {productInCartArray: productArray, amount_stored: number}} = {};
   totalPrice = 0;
   fullName = '';
   address = '';
@@ -26,7 +26,7 @@ export class CartComponent implements OnInit {
   getTotal(){
     this.totalPrice = 0;
     for(let productId in this.cartList){
-      this.totalPrice += this.cartList[productId].amount_stored * this.cartList[productId].productInfo.price;
+      this.totalPrice += this.cartList[productId].amount_stored * this.cartList[productId].productInCartArray.price;
     }
 
     this.totalPrice = parseFloat(this.totalPrice.toFixed(2));

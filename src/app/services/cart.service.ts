@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { product } from '../models/model';
+import { productArray } from '../models/model';
 
 
 @Injectable({
@@ -8,17 +8,17 @@ import { product } from '../models/model';
 
 export class CartService {
 
-  private cart:{[productId:number]:{productInfo:product,amount_stored:number}} = {}
+  private cart:{[productId:number]:{productInCartArray:productArray,amount_stored:number}} = {}
   private purchaseInfo:{fullname:string, address:string,total:number} = {fullname:'',address:'',total:0}
 
   constructor() { }
 
-  addCart(productId:number,product:product,amount_input:number){
+  addCart(productId:number,productArrayInput:productArray,amount_input:number){
     if(productId in this.cart){
       this.cart[productId].amount_stored +=amount_input
     }
     else{
-      this.cart[productId] = {productInfo:product, amount_stored:amount_input}
+      this.cart[productId] = {productInCartArray:productArrayInput, amount_stored:amount_input}
     }
   }
 

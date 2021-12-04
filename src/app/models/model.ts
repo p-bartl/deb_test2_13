@@ -1,4 +1,4 @@
-export type product = {
+export type productArray = {
     id:number,
     name:string,
     price:number,

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
-import { product } from 'src/app/models/model';
+import { productArray } from 'src/app/models/model';
 import { ProductItemService } from 'src/app/services/product-item.service';
 import { CartService } from 'src/app/services/cart.service';
 @Component({
@@ -18,11 +18,11 @@ amount_input_frontend = 1;
   ngOnInit(): void {
   }
 
-  addToCart(product:product):void{
+  addToCart(product:productArray):void{
     this.addedProduct.emit({product:product,amount_input:this.amount_input_frontend})
   }
 
-  setSelectedItem(product:product){
+  setSelectedItem(product:productArray){
     this.productItemService.setSelectedProduct(product)
   }
 
