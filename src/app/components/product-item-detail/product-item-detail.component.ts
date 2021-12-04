@@ -8,6 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './product-item-detail.component.html',
   styleUrls: ['./product-item-detail.component.css']
 })
+
 export class ProductItemDetailComponent implements OnInit {
 
   product:productArray = {id:0,name:'',price:0,url:'0',description:''}
@@ -19,8 +20,8 @@ export class ProductItemDetailComponent implements OnInit {
     this.product = this.productItemServe.getSelectedProduct();
   }
 
-  addToCart(product:productArray):void{
-    this.cartService.addCart(product.id,product,this.amount_input_frontend)
+  addToCart(productArrayInput:productArray):void{
+    this.cartService.addCart(productArrayInput.id,productArrayInput,this.amount_input_frontend)
     alert("Added to cart")
   }
 
