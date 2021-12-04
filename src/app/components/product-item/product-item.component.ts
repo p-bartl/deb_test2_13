@@ -9,10 +9,12 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
-@Input() product = {id:0,name:'',price:0,url:'',description:''}
-@Output() addedProduct = new EventEmitter()
-quantityList = [1,2,3,4,5,6,7,8,9,10]
-amount_input_frontend = 1;
+  @Input() product_parent = {id:0,name:'',price:0,url:'',description:''}
+  @Output() addedProduct = new EventEmitter()
+
+  quantityList = [1,2,3,4,5,6,7,8,9,10]
+  amount_input_frontend = 1;
+
   constructor(private productItemService:ProductItemService,private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -22,10 +24,7 @@ amount_input_frontend = 1;
     this.addedProduct.emit({product:product,amount_input:this.amount_input_frontend})
   }
 
-  setSelectedItem(product:productArray){
-    this.productItemService.setSelectedProduct(product)
+  setSelectedItem(product_parent:productArray){
+    this.productItemService.setSelectedProduct(product_parent)
   }
-
-
-
 }
