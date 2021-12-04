@@ -23,7 +23,6 @@ export class ConfirmationComponent implements OnInit {
 
   }
 
-
   backToProductList(){
     this.router.navigateByUrl('')
   }

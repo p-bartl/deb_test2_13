@@ -22,9 +22,8 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  addToCart(cartItem:{product:productArray,amount_input:number}){
-    this.cartService.addCart(cartItem.product.id,cartItem.product,cartItem.amount_input)
+  addToCart(productInCartArray:{productArrayInput:productArray,amount_input:number}){
+    this.cartService.addCart(productInCartArray.productArrayInput.id,productInCartArray.productArrayInput,productInCartArray.amount_input)
     alert("Added to cart")
   }
-
 }

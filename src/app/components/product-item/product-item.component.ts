@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
 import { productArray } from 'src/app/models/model';
 import { ProductItemService } from 'src/app/services/product-item.service';
 import { CartService } from 'src/app/services/cart.service';
+
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -9,21 +10,23 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
-@Input() product = {id:0,name:'',price:0,url:'',description:''}
-@Output() addedProduct = new EventEmitter()
-quantityList = [1,2,3,4,5,6,7,8,9,10]
-amount_input_frontend = 1;
+  @Input() product_parent = {id:0,name:'',price:0,url:'',description:''}
+  @Output() addedProduct = new EventEmitter()
+
+  quantityList = [1,2,3,4,5,6,7,8,9,10]
+  amount_input_frontend = 1;
+  
   constructor(private productItemService:ProductItemService,private cartService:CartService) { }
 
   ngOnInit(): void {
   }
 
-  addToCart(product:productArray):void{
-    this.addedProduct.emit({product:product,amount_input:this.amount_input_frontend})
+  addToCart(productArrayInputFrontend:productArray):void{
+    this.addedProduct.emit({product_parent:productArrayInputFrontend,amount_input:this.amount_input_frontend})
   }
 
-  setSelectedItem(product:productArray){
-    this.productItemService.setSelectedProduct(product)
+  setSelectedItem(productArrayInputFrontend:productArray){
+    this.productItemService.setSelectedProduct(productArrayInputFrontend)
   }
 
 
