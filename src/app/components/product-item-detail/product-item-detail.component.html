@@ -1,12 +1,12 @@
 <div class="detail-container">
-    <img class="img" src={{product.url}}>
+    <img class="img" src={{product_child_on_detailpage.url}}>
     <div class="detail-item">
         <div class="detailed-space">
-            <div class="detail-title">{{product.name}}</div>
-            <div class="detail-space">{{product.price}}</div>
-            <div class="detail-space">{{product.description}}</div>
+            <div class="detail-title">{{product_child_on_detailpage.name}}</div>
+            <div class="detail-space">{{product_child_on_detailpage.price}}</div>
+            <div class="detail-space">{{product_child_on_detailpage.description}}</div>
         </div>
-        <form (ngSubmit)="addToCart(product)">
+        <form (ngSubmit)="addToCart(product_child_on_detailpage)">
             <select class="select-input" name="selectedQuantity" [(ngModel)]="amount_input_frontend">
                 <option *ngFor="let quantity of quantityList" [ngValue]="quantity">{{quantity}}</option>
             </select>

@@ -11,13 +11,13 @@ import { CartService } from 'src/app/services/cart.service';
 
 export class ProductItemDetailComponent implements OnInit {
 
-  product:productArray = {id:0,name:'',price:0,url:'0',description:''}
+  product_child_on_detailpage:productArray = {id:0,name:'',price:0,url:'0',description:''}
   quantityList = [1,2,3,4,5,6,7,8,9,10]
   amount_input_frontend=1
   constructor(private productItemServe:ProductItemService,private cartService:CartService) { }
 
   ngOnInit(): void {
-    this.product = this.productItemServe.getSelectedProduct();
+    this.product_child_on_detailpage = this.productItemServe.getSelectedProduct();
   }
 
   addToCart(productArrayInput:productArray):void{
