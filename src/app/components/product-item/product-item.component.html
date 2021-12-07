@@ -3,10 +3,10 @@
         <a [routerLink]="['productDetail',product_child.name]" (click)="setSelectedItem(product_child)">
             <img class="product-image" src={{product_child.url}}>
         </a>
-        <div class="product-info">
+        <div class="product-information">
             {{product_child.name}}
         </div>
-        <div class="product-info">
+        <div class="product-detail-information">
             ${{product_child.price}}
         </div>
         <form (ngSubmit)="addToCart(product_child)">

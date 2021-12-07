@@ -6,6 +6,11 @@
   border: 1px outset #154c79;
 } 
 
+.select-input {
+  width: 75px; 
+  margin-bottom: 5px;
+}
+
 .product-container {
   margin-top: 64px;
   display: flex;
@@ -15,17 +20,17 @@
   justify-content: flex-start;   
 }
 
-.select-input {
-  width: 75px; 
-  margin-bottom: 5px;
-}
-
 .product-item{
 margin: 2rem;
 margin-left: 125px;
 }
 
-.product-info{
+.product-information{
+  margin-bottom:5px;
+  font-family: Arial;
+  }
+
+.product-detail-information{
 margin-bottom:5px;
 font-family: Arial;
 }

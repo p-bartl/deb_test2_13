@@ -11,12 +11,12 @@
             Amount: <input class="number-input" min="0" name="amount_stored" type="number" value="{{cart.value.amount_stored}}" [(ngModel)]="cart.value.amount_stored" (ngModelChange)="getSumTotal()">
         </form>
         <button class="btn btn-primary" (click)="removeItem(cart.value.productInCartArray.id)">
-            Remove
+            Remove product
         </button>
     </div>
 </div>
 
-<div class="empty-cart-message" *ngIf="isCartListEmpty()"><h1>No items in the cart</h1></div>
+<div class="cart-is-empty-message" *ngIf="isCartListEmpty()"><h1>There are no items in your cart</h1></div>
 
 
 <div class="cart-container">
@@ -28,12 +28,12 @@
     <form #form="ngForm" (ngSubmit)="purchase()">
         <label class="form-margin">Full name</label><br>
         <input class="form-margin" required minlength="3" type="text" name="fullName" [(ngModel)]="fullName" placeholder="(minimum 3 characters)"><br>
-        <label class="form-margin">Address</label><br>
+        <label class="form-margin">Address (Street, ZIP Code)</label><br>
         <input class="form-margin" required minlength="6" type="text" name="address" [(ngModel)]="address" placeholder="(minimum 6 characters)"><br>
-        <label class="form-margin">Credit card number</label><br>
+        <label class="form-margin">Credit Card Number</label><br>
         <input class="form-margin" required minlength="16" maxlength="16" type="text" name="creditCardNumber" [(ngModel)]="creditCardNumber" placeholder="(16-digit-number)"
             onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br>
-        <p class="form-margin">We'll never share your payment details with anyone else</p><br>
+        <p class="form-margin">Trust us! We'll never share your payment details</p><br>
         <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
             Submit
         </button>

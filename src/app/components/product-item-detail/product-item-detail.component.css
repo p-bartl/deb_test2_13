@@ -8,19 +8,19 @@ img {
   margin-bottom: 5px;
 }
 
-.detail-container {
+.product-detail-item {
+  margin-left: 75px;
+  margin-right: 75px;
+  font-family: Arial;
+}
+
+.product-detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 45px;
 }
 
-.detail-item {
-  margin-left: 75px;
-  margin-right: 75px;
-  font-family: Arial;
-}
-
-.back-link {
+.go-back-link {
   margin-top: 5px;
 }

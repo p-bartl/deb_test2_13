@@ -1,23 +1,11 @@
-.confirmation-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5%;
-  }
-  
-  .confirmation-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial;
-  }
-  
-  .confirmation-header {
-    color: #44dd2f;
-    font-family: Arial;
-  }
-  
-  .confirmation-item {
-    margin-bottom: 30px;
-    font-family: Arial;
-  }
+.confirm-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial;
+}
+
+.confirm-header {
+  color: #44dd2f;
+  font-family: Arial;
+}

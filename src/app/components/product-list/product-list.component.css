@@ -1,15 +1,5 @@
-.product-index {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 125px;
-    margin-bottom: 45px;
-    border-style: outset;
-  }
-  
-  .product-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-  }
+.product-list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
