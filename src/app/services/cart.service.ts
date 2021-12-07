@@ -9,7 +9,7 @@ import { productArray } from '../models/model';
 export class CartService {
 
   private cart:{[productId:number]:{productInCartArray:productArray,amount_stored:number}} = {}
-  private purchaseInfo:{fullname:string, address:string,total:number} = {fullname:'',address:'',total:0}
+  private purchaseArray:{fullname:string, address:string,sum_total:number} = {fullname:'',address:'',sum_total:0}
 
   constructor() { }
 
@@ -28,23 +28,20 @@ export class CartService {
 
   resetCart(){
     this.cart = {}
-    this.purchaseInfo = {fullname:'',address:'',total:0}
+    this.purchaseArray = {fullname:'',address:'',sum_total:0}
   }
   
-  setPurchaseInfo(fullname:string,address:string,total:number){
-    this.purchaseInfo.fullname = fullname;
-    this.purchaseInfo.address = address;
-    this.purchaseInfo.total = total;
+  setPurchaseInfo(fullname:string,address:string,sum_total:number){
+    this.purchaseArray.fullname = fullname;
+    this.purchaseArray.address = address;
+    this.purchaseArray.sum_total = sum_total;
   }
  
-  getPurchaseInfo():{fullname:string,address:string,total:number}{
-    return this.purchaseInfo;
+  getPurchaseInfo():{fullname:string,address:string,sum_total:number}{
+    return this.purchaseArray;
   }
 
   removeItem(productId:number){
     delete this.cart[productId]
   }
-
-
-
 }

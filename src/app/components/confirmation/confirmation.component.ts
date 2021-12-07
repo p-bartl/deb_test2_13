@@ -11,18 +11,16 @@ import { Router } from '@angular/router';
 export class ConfirmationComponent implements OnInit {
 
   fullname:string = ''
-  total:number = 0
+  sum_total:number = 0
 
   constructor(private cartService:CartService,private router:Router) { }
 
   ngOnInit(): void {
 
     this.fullname = this.cartService.getPurchaseInfo().fullname;
-    this.total = this.cartService.getPurchaseInfo().total;
+    this.sum_total = this.cartService.getPurchaseInfo().sum_total;
     this.cartService.resetCart()
-
   }
-
 
   backToProductList(){
     this.router.navigateByUrl('')

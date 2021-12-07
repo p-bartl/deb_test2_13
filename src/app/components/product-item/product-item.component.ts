@@ -14,7 +14,7 @@ export class ProductItemComponent implements OnInit {
   @Input() product_child = {id:0,name:'',price:0,url:'',description:''}
   @Output() product_stored = new EventEmitter()
 
-  quantityList = [1,2,3,4,5,6,7,8,9,10]
+  quantityList = [1,2,3,4,5,6,7,8,9,10,11]
   amount_input_frontend = 1;
 
   constructor(private productItemService:ProductItemService,private cartService:CartService) { }

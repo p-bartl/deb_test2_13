@@ -1,4 +1,4 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { productArray } from 'src/app/models/model';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class CartComponent implements OnInit {
   cartList: {[productId: number]: {productInCartArray: productArray, amount_stored: number}} = {};
-  totalPrice = 0;
+  sum_total = 0;
   fullName = '';
   address = '';
   creditCardNumber = '';
@@ -20,27 +20,27 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartList = this.cartService.getCart();
-    this.getTotal();
+    this.getSumTotal();
   }
 
-  getTotal(){
-    this.totalPrice = 0;
+  getSumTotal(){
+    this.sum_total = 0;
+
     for(let productId in this.cartList){
-      this.totalPrice += this.cartList[productId].amount_stored * this.cartList[productId].productInCartArray.price;
+      this.sum_total += this.cartList[productId].amount_stored * this.cartList[productId].productInCartArray.price;
     }
 
-    this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
+    this.sum_total = parseFloat(this.sum_total.toFixed(2));
   }
 
   purchase(){
-    this.cartService.setPurchaseInfo(this.fullName,this.address,this.totalPrice)
+    this.cartService.setPurchaseInfo(this.fullName,this.address,this.sum_total)
     this.router.navigateByUrl('/confirmation')
   }
 
   removeItem(productId: number){
     this.cartService.removeItem(productId);
-    this.getTotal();
-    
+    this.getSumTotal();
   }
 
   isCartListEmpty(): boolean{
